@@ -27,3 +27,15 @@
 .btn-group {
   margin-bottom:20px;
 }
+.axis text {  
+    font-size: 10px;
+}
+
+.axis-label {
+    font-size: 12px;
+}
+
+.axis path {
+    fill: none;
+    stroke: #BBB;
+}
