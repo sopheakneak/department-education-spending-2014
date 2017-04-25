@@ -67,28 +67,8 @@ $(function () {
         })]).nice();
 
         var keys = data.columns.slice(1);
-        //console.log(keys);
 
-        var colorScale = d3.scaleOrdinal().domain(keys).range(d3.schemeCategory10);
-
-        
-        
-        // y.domain([0, d3.max(data, function (d) {
-        //     //console.log("domain",d.total);
-        //     return d.total;
-        // })]).nice();
-        
-        //z.domain(keys);
-
-        //data.sort(function (a, b) { return b.total - a.total; });
-        // x.domain(data.map(function (d) { return d.state; }));
-        // y.domain([0, d3.max(data, function (d) { return d.total; })]).nice();
-        // //z.domain(keys);
-
-
-
-
-        //var series = nestedData.length;
+        var colorScale = d3.scaleOrdinal().domain(keys).range(d3.schemeCategory20);
 
         var svg = d3.select('#vis')
             .append('svg')
@@ -119,16 +99,9 @@ $(function () {
 
         var rects = stacks.selectAll("rect")
             .data(function (d) {
-                console.log("data", d)
                 return d;
             }); 
 
-        // stacks.enter().append("g")
-        //     .attr("fill", function (d) {
-        //         //console.log(d);
-        //         return colorScale(d.key);
-        //     })
-        
         rects.enter().append("rect")
             .attr("x", function (d) {
                 //console.log("x:",d.data.state) 
@@ -171,31 +144,6 @@ $(function () {
                     .attr("font-weight", "bold")
                     .attr("text-anchor", "start")
                     .text('Dollars');
-        // Create a text element to label your x-axis by appending a text element to your `svg` 
-        // You'll need to use the `transform` property to position it below the chart
-        // Set its class to 'axis-label', and set the text to "Device-App Combinations"
-        
-        // svg.append('text').attr('class', 'axis-label')
-        //     .text('Device-App Combinations')
-        //     .attr('transform', 'translate(' + (drawWidth / 2) + ',' + (drawHeight+margin.bottom) + ')');
-
-        // g.append("g")
-        //     .attr("class", "axis")
-        //     .attr("transform", "translate(0," + drawHeight + ")rotate(90)")
-        //     .attr("alignment-baseline", "hanging")
-        //     .call(d3.axisBottom(x));
-
-        // g.append("g")
-        //     //.attr("class", "axis")
-        //     .call(d3.axisLeft(y).ticks(null, "s"))
-        //     .append("text")
-        //     .attr("x", 2)
-        //     .attr("y", y(y.ticks().pop()) + 0.5)
-        //     .attr("dy", "0.32em")
-        //     .attr("fill", "#000")
-        //     .attr("font-weight", "bold")
-        //     .attr("text-anchor", "start")
-        //     .text("Billions of Dollar");
 
         // var legend = g.append("g")
         //     .attr("font-family", "sans-serif")
@@ -217,73 +165,6 @@ $(function () {
         //     .attr("y", 9.5)
         //     .attr("dy", "0.32em")
         //     .text(function (d) { return d; });
-
-
-        // rects.enter().append("rect")
-        //     .attr("fill", function (d) { return colorScale(d.key); })
-        //     .merge(rects)
-        //     .selectAll("rect")
-        //     // .data(function (d) { 
-        //     //     //console.log("data :"); 
-        //     //     var array=[];
-        //     //     for (value in d.values[0]){
-        //     //         array.push(+d.values[0][value]); 
-        //     //     }
-        //     //     return array; 
-        //     // })
-        //     .enter().append("rect")
-        //     .attr("x", function (d) {
-        //         console.log(d.key);
-        //         //return x(d.data.State); 
-        //     })
-        //     .attr("y", function (d) { 
-        //         return y(d[1]); 
-        //     })
-        //     .attr("height", function (d) { 
-        //         return y(d[0]) - y(d[1]); 
-        //     })
-        //     .attr("width", x.bandwidth());
-
-
-        //console.log(nestedData);
-
-        // var test = nestedData.map(function(d) {
-        //     //console.log(d.values);
-        //     var num = [];
-        //     for (var i = 0; i < d.values.length; i++) {
-        //         //console.log(d.values.length);
-        //         num.push(d.values[i]["2014_actual"]);
-        //     }
-        //     //console.log(num);
-        //     return num;
-        // })
-
-        // var max = d3.max(workingData, function (d) {
-        //     //var num = [];
-        //     return +d["2014_actual"];
-        // }) * 1.05;
-
-        // var min = d3.min(workingData, function (d) {
-        //     //var num = [];
-        //     return +d["2014_actual"];
-        // }) * 0.85;
-
-        // var yScale = d3.scaleLog()
-        //     .range([drawHeight, 0])
-        //     .domain([min, max]);
-
-        // var xScale = d3.scaleBand()
-        //     .range(0, drawWidth)
-        //     .domain([programs]);
-
-        // var programs = nestedData.map(function (d) {
-        //     return d.key;
-        // });
-
-
-
-
-
 
 
         // var draw = function() {
