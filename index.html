@@ -11,7 +11,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.8.0/d3.min.js"></script>
-    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.js"></script>
     <!-- Custom files -->
     <link rel="stylesheet" href="css/main.css" />
 
@@ -21,12 +21,51 @@
 
 <body class="container">
     <header class="jumbotron">
-    <h1>Department of Education</h1>
-    <p>Spending in 2014</p>
+        <h1>Department of Education</h1>
+        <p>Education Department Budget and Spending in 2014</p>
     </header>
-    <p>Follow the instructions in the <code>README.md</code></p>
-    
+    <h2>How does each State allocated funding on their budget in 2014?</h2>
+    <p>You may utilize the controllers below to slice and filter the visualization</p>
+    <div class="container">
+    <div class="btn-group" data-toggle="buttons" id= "testing">
+        <label class="btn btn-primary">
+            <input class = "selection" value="program" type="radio" name="options" id="option2" autocomplete="off">View by All Department of Education Programs
+        </label>
+        <label class="btn btn-primary active">
+            <input class = "selection" value="state" type="radio" name="options" id="option1" autocomplete="off">View by All States
+        </label>
+    </div>
+    <span class="dropdown">
+    <select class= "selection" id="statelist">
+        <option selected value="state">All States</option>
+    </select>
+</span>
+    </div>
     <div id="vis"></div>
+    <div class="container">
+        <h2>Design Explanation</h2>
+        <p>I've decided to utilize an interactive bar chart as the visual encoding for the dataset. 
+            It’s challenging to present the dataset I have in a visualization. I’ve chosen the report of 
+            United States Department of Education spending in 2014. There are 39 programs that the Department of 
+            Education support in over 59 states. The varied range of differing variable makes it even more challenging 
+            to create a good visualization. I decided to filter the data set to give readers a more comprehensive
+             pieces as well as providing readers a tool to slice the data into a smaller piece. A bar graph with 
+             sorted values is a great way to visualize this dataset; it gives readers the most accurate 
+             elementary perceptual task. In addition, the interactive and sorting features of the visualization 
+             give readers an easier way to track which state or program has spent the budget in retrospective. 
+             I’ve also decided to simply stick to one color in order to keep users sane when looking at the visualization.
+              I believe a bar graph is arguably the best, because it helps reader compare between each state and program. 
+              A grouped bar chart would have too variation of data points that would make it difficult to readers to concentrate. 
+              A geo map would be a good alternative, although it is quite difficult to visualize the different programs and states 
+              using color gradient. Ultimately, a sorted bar chart would be the most effective visual encoding for this multi-varied dataset. </p>
+        <p>Readers have the ability to control and filter the dataset for comprehension purposes. Upon clicking on “View by All States,” users will get a high overview 
+            of how much each state is spending on educational programs. Since it is sorted, users are able to easily distinguish the state that 
+            spent the most. On the other hand, upon clicking on “View by All Department of Education Programs”, users can answer to questions 
+            such as “Which program is being spent the most on?” or “What programs the government have not paid attention much to?” The hovering 
+            capabilities allows readers an access to get raw data for viewing purposes. Last but not least, the State drop down menu allows readers to 
+            further investigate the dataset and view how each state spend budget their spending. Hence, these interactive features has tremendously help 
+            sin slicing and aggregate the data into a more comprehensive and user-friendly view. </p>
+    </div>
 </body>
 
 </html>

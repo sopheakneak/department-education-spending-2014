@@ -1,41 +1,47 @@
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css);
 
-.axis line, .axis path {
-  fill: none;
-  stroke: #000;
-}
-
 .title {
-	text-anchor:middle;
+  text-anchor: middle;
 }
 
-.node {
-  border: solid 1px white;
-  font: 10px sans-serif;
-  line-height: 12px;
-  overflow: hidden;
+.axis text {
+  font-size: 10px;
+}
+
+.bar {
+  fill: #4b2e83;
+  opacity: .4;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
   position: absolute;
-  text-indent: 2px;
-  color:white;
+  text-align: center;
 }
 
-#vis {
-  position:relative;
-  padding-bottom:100px;
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
 }
 
-.btn-group {
-  margin-bottom:20px;
-}
-.axis text {  
-    font-size: 10px;
-}
-
-.axis-label {
-    font-size: 12px;
-}
-
-.axis path {
-    fill: none;
-    stroke: #BBB;
+div.container{
+  padding-bottom: 50px;
 }
